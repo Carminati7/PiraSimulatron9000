@@ -3,16 +3,16 @@ import random
 import time
 
 def traduci_testa_socio(frase):
-    # 10% di probabilità che la risposta sia solo "Minchia zio, voglio scopare"
-    if random.random() < 0.1:
+    # 5% di probabilità che la risposta sia solo "Minchia zio, voglio scopare"
+    if random.random() < 0.05:
         return "Minchia zio, voglio scopare"
         
-        # 20% di probabilità che la risposta sia solo "SEEEEEEEEESSOOOOOOOOOOOOOOOO!!"
-    if random.random() < 0.1:
+        # 5% di probabilità che la risposta sia solo "SEEEEEEEEESSOOOOOOOOOOOOOOOO!!"
+    if random.random() < 0.05:
         return "SEEEEEEEEESSOOOOOOOOOOOOOOOO"
 
-# 20% di probabilità che la risposta sia solo "Quack!!"
-    if random.random() < 0.1:
+# 5% di probabilità che la risposta sia solo "Quack!!"
+    if random.random() < 0.05:
         return "Quack!!"
     
     # Dizionario delle sostituzioni
