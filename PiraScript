@@ -15,6 +15,17 @@ def traduci_testa_socio(frase):
         ]
         return random.choice(risposte_personali)
     
+    # Controllo se la frase è una domanda in seconda persona
+    if re.search(r'\b(cosa fai|come stai|dove sei|che dici|che pensi|che fai)\b', frase, re.IGNORECASE):
+        risposte_prima_persona = [
+            "Faccio schifo, bro!", 
+            "Sono spento, socio.", 
+            "Minchia bro, che sbatti.", 
+            "Sto qui a perdere tempo, capito?", 
+            "Non lo so, bro, che domande fai?"
+        ]
+        return random.choice(risposte_prima_persona)
+    
     # 5% di probabilità che la risposta sia solo "Minchia zio, voglio scopare"
     if random.random() < 0.05:
         return "Minchia zio, voglio scopare"
