@@ -7,11 +7,11 @@ def traduci_testa_socio(frase):
     if random.random() < 0.05:
         return "Minchia zio, voglio scopare"
         
-        # 5% di probabilità che la risposta sia solo "SEEEEEEEEESSOOOOOOOOOOOOOOOO!!"
+    # 5% di probabilità che la risposta sia solo "SEEEEEEEEESSOOOOOOOOOOOOOOOO!!"
     if random.random() < 0.05:
         return "SEEEEEEEEESSOOOOOOOOOOOOOOOO"
-
-# 5% di probabilità che la risposta sia solo "Quack!!"
+    
+    # 5% di probabilità che la risposta sia solo "Quack!!"
     if random.random() < 0.05:
         return "Quack!!"
     
@@ -38,7 +38,7 @@ def traduci_testa_socio(frase):
     for parola, sostituzione in parole_chiave.items():
         frase = re.sub(parola, sostituzione, frase, flags=re.IGNORECASE)
     
-    # Possibile aggiunta casuale con 100% di probabilità
+    # Aggiunte casuali
     aggiunta_casuale = [
         "Seeessoooo",
         "Stasera non ho la macchina",
@@ -46,15 +46,22 @@ def traduci_testa_socio(frase):
         "Minchia zio",
         "Cazzo che top",
         "A bomba",
-        "Non lo so, ma minchia"
-        "Qualcuno logga?"
-        "Yo"
-        "Sono fidanzato"
+        "Non lo so, ma minchia",
+        "Qualcuno logga?",
+        "Yo",
+        "Sono fidanzato",
         "Quella troia"
     ]
     
+    # Possibile aggiunta casuale con 50% di probabilità all'inizio o alla fine
     if random.random() < 0.5:  # 50% di probabilità
+        frase = random.choice(aggiunta_casuale) + " " + frase
+    else:
         frase += " " + random.choice(aggiunta_casuale)
+    
+    # 25% di probabilità che la frase cominci con "Minchia, socio!"
+    if random.random() < 0.25:
+        frase = "Minchia, socio! " + frase
     
     # Aggiunta casuale di bestemmia con 30% di probabilità
     bestemmie = [
