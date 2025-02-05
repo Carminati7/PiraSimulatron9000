@@ -41,7 +41,7 @@ def traduci_testa_socio(frase):
     # Possibile aggiunta casuale con 100% di probabilità
     aggiunta_casuale = [
         "Seeessoooo",
-        "Non ho la macchina",
+        "Stasera non ho la macchina",
         "Minchia bro",
         "Minchia zio",
         "Cazzo che top",
