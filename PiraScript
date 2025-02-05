@@ -26,6 +26,14 @@ def traduci_testa_socio(frase):
         ]
         return random.choice(risposte_prima_persona)
     
+    # Controllo se la frase contiene la prima persona singolare e la converto in seconda persona
+    frase = re.sub(r'\b(io|mi|me|mio|mia|miei|mie)\b', "tu", frase, flags=re.IGNORECASE)
+    frase = re.sub(r'\bsono\b', "sei", frase, flags=re.IGNORECASE)
+    frase = re.sub(r'\bho\b', "hai", frase, flags=re.IGNORECASE)
+    frase = re.sub(r'\bfaccio\b', "fai", frase, flags=re.IGNORECASE)
+    frase = re.sub(r'\bmangio\b', "mangi", frase, flags=re.IGNORECASE)
+    frase = re.sub(r'\bbevo\b', "bevi", frase, flags=re.IGNORECASE)
+    
     # 5% di probabilità che la risposta sia solo "Minchia zio, voglio scopare"
     if random.random() < 0.05:
         return "Minchia zio, voglio scopare"
