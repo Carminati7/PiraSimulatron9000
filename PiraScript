@@ -72,3 +72,30 @@ def traduci_testa_socio(frase):
         " Cringe",
         " Boh, vabbè.",
         " Easy bro."
+    ]
+    
+    if random.random() < 0.4:  # 40% di probabilità
+        frase += random.choice(espressioni_random)
+    
+    # 20% di probabilità di aggiungere "Vieni su LOL?"
+    if random.random() < 0.2:
+        frase += " Vieni su LOL?"
+    
+    return frase
+
+def interfaccia_interattiva():
+    print("Dimmi, Bro!")
+    
+    while True:
+        frase_input = input("Scrivi una frase (o 'esci' per terminare): ")
+        
+        if frase_input.lower() == 'esci':
+            print("Ci vediamo, bro!")
+            break
+        else:
+            risposta = traduci_testa_socio(frase_input)
+            print("Bot:", risposta)
+            time.sleep(1)  # Pausa di 1 secondo per dare l'illusione che stia "pensando" prima di rispondere
+
+# Avvia l'interfaccia interattiva
+interfaccia_interattiva()
