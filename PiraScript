@@ -1,0 +1,74 @@
+import re
+import random
+import time
+
+def traduci_testa_socio(frase):
+    # 10% di probabilità che la risposta sia solo "Minchia zio, voglio scopare"
+    if random.random() < 0.1:
+        return "Minchia zio, voglio scopare"
+        
+        # 20% di probabilità che la risposta sia solo "SEEEEEEEEESSOOOOOOOOOOOOOOOO!!"
+    if random.random() < 0.1:
+        return "Minchia zio, voglio scopare"
+    
+    # Dizionario delle sostituzioni
+    parole_chiave = {
+        r"\bsesso\b": "sì",
+        r"\bamico\b|\bamici\b": "bro",
+        r"\bciao\b|\bhey\b|\bbuongiorno\b|\bsalve\b": "Bella!",
+        r"\bragazzo\b|\buomo\b|\bpersona\b": "socio",
+        r"\bragazza\b|\bdonna\b": "socia",
+        r"\bauto\b|\bmacchina\b|\bveicolo\b": "Non ho la macchina",
+        r"\blavoro\b|\bimpiego\b": "sbatti",
+        r"\bstanco\b|\baffaticato\b": "spento",
+        r"\bdenaro\b|\bsoldi\b|\bcontanti\b": "cash",
+        r"\bcapisci\b|\bhai capito\b": "ci arrivi?",
+        r"\bbuono\b|\bottimo\b|\bgrande\b": "top",
+        r"\bbrutto\b|\borrendo\b|\bschifo\b": "cringe",
+        # Aggiunte per i riferimenti all'alcol
+        r"\bbere\b|\bconsumare\b|\bbirra\b|\bbacco\b|\balcool\b|\bdrinks?\b": "fa cagare",
+        r"\bvino\b|\bprosecco\b|\bspumante\b|\bgrappa\b": "fare schifo"
+    }
+    
+    # Applicare le sostituzioni
+    for parola, sostituzione in parole_chiave.items():
+        frase = re.sub(parola, sostituzione, frase, flags=re.IGNORECASE)
+    
+    # Possibile aggiunta casuale con 100% di probabilità
+    aggiunta_casuale = [
+        "Seeessoooo",
+        "Non ho la macchina",
+        "Minchia bro",
+        "Minchia zio",
+        "Cazzo che top",
+        "A bomba",
+        "Non lo so, ma minchia"
+        "Qualcuno logga?"
+        "Yo"
+        "Sono fidanzato"
+        "Quella troia"
+    ]
+    
+    if random.random() < 0.5:  # 50% di probabilità
+        frase += " " + random.choice(aggiunta_casuale)
+    
+    # Aggiunta casuale di bestemmia con 30% di probabilità
+    bestemmie = [
+        "Dio fa",
+        "Dio Cane",
+        "Porcoddio",
+        "Dio bestia"
+    ]
+    
+    if random.random() < 0.3:  # 30% di probabilità
+        frase += " " + random.choice(bestemmie)
+    
+    # Slang casuale per enfatizzare il tono tamarro
+    espressioni_random = [
+        " Capito, bro?",
+        " Top.",
+        " Che sbatti",
+        " Stai sereno, socio.",
+        " Cringe",
+        " Boh, vabbè.",
+        " Easy bro."
