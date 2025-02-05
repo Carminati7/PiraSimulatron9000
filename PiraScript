@@ -9,7 +9,11 @@ def traduci_testa_socio(frase):
         
         # 20% di probabilità che la risposta sia solo "SEEEEEEEEESSOOOOOOOOOOOOOOOO!!"
     if random.random() < 0.1:
-        return "Minchia zio, voglio scopare"
+        return "SEEEEEEEEESSOOOOOOOOOOOOOOOO"
+
+# 20% di probabilità che la risposta sia solo "Quack!!"
+    if random.random() < 0.1:
+        return "Quack!!"
     
     # Dizionario delle sostituzioni
     parole_chiave = {
